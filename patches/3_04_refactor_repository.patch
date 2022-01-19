@@ -80,7 +80,7 @@ diff --git a/src/main/java/ru/javawebinar/topjava/repository/inmemory/InMemoryMe
 +    private final Map<Integer, InMemoryBaseRepository<Meal>> usersMealsMap = new ConcurrentHashMap<>();
  
      {
-         MealsUtil.meals.forEach(meal -> save(meal, USER_ID));
+         MealsUtil.MEALS.forEach(meal -> save(meal, USER_ID));
 @@ -37,25 +34,19 @@
  
      @Override
