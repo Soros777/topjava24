@@ -21,7 +21,7 @@ diff --git a/src/main/java/ru/javawebinar/topjava/util/MealsUtil.java b/src/main
  public class MealsUtil {
      public static final int DEFAULT_CALORIES_PER_DAY = 2000;
  
--    public static final List<Meal> meals = Arrays.asList(
+-    public static final List<Meal> MEALS = Arrays.asList(
 -            new Meal(LocalDateTime.of(2020, Month.JANUARY, 30, 10, 0), "Завтрак", 500),
 -            new Meal(LocalDateTime.of(2020, Month.JANUARY, 30, 13, 0), "Обед", 1000),
 -            new Meal(LocalDateTime.of(2020, Month.JANUARY, 30, 20, 0), "Ужин", 500),
@@ -134,7 +134,7 @@ diff --git a/src/test/java/ru/javawebinar/topjava/repository/inmemory/InMemoryMe
      private final Map<Integer, InMemoryBaseRepository<Meal>> usersMealsMap = new ConcurrentHashMap<>();
  
      {
--        MealsUtil.meals.forEach(meal -> save(meal, USER_ID));
+-        MealsUtil.MEALS.forEach(meal -> save(meal, USER_ID));
 -        save(new Meal(LocalDateTime.of(2015, Month.JUNE, 1, 14, 0), "Админ ланч", 510), ADMIN_ID);
 -        save(new Meal(LocalDateTime.of(2015, Month.JUNE, 1, 21, 0), "Админ ужин", 1500), ADMIN_ID);
 +        InMemoryBaseRepository<Meal> userMeals = new InMemoryBaseRepository<>();
